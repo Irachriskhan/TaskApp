@@ -4,7 +4,7 @@
   "description": "TodoApp with NodeJs and express",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js",
+    "test": "node app.js",
     "start": "nodemon app.js"
   },
   "repository": {
@@ -12,8 +12,9 @@
     "url": "https://github.com/Irachriskhan/TaskApp.git"
   },
   "keywords": [
-    "todoapp",
-    "taskapp"
+    "todo app",
+    "task app",
+    "task manager"
   ],
   "author": "Christophe Irakoze",
   "license": "MIT",
