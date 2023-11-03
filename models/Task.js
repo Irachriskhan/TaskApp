@@ -23,6 +23,8 @@ const TaskSchema = new mongoose.Schema({
     maxlength: [30, "name can't go beyond 30"],
   },
   completed: Boolean,
+  phoneNumber: Number,
+  adress: String,
 });
 
-module.exports = mongoose.model("task", TaskSchema);
+module.exports = mongoose.model("Task", TaskSchema);

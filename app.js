@@ -2,24 +2,22 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const task = require("./routes/task");
-const connectDB = require("./db/connection");
+const connectDB = require("./db/connect");
 require("dotenv").config(); // npm install dotenv
-
-app.use(express.static("./public"));
 
 // json middleware
 app.use(express.json());
+app.use(express.static("./public"));
+// routes
+app.use("/api/v1/task", task);
 
 app.get("/hello", (req, res) => {
   res.send("Task Manager App");
 });
 
-// routes
-app.use("/api/v1/task", task);
-
 const start = async () => {
   try {
-    await connectDB(process.env.MongoURL);
+    await connectDB(process.env.MONGO_URI);
     app.listen(port, () => {
       console.log(`"Task Manager App running on port ${port}!"`);
     });
