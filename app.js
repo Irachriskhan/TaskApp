@@ -27,11 +27,12 @@ const start = async () => {
 };
 
 start();
-// app.get('/api/v1/task', getAllTask); // get All tasks
-// app.post('/api/v1/tasks/:id', createTask); // create one task
-// app.get('/api/v1/tasks/:id', getTask); // get one task
-// app.patch('/api/v1/tasks/:id', updateTask); // update one task
-// app.delete('/api/v1/tasks/:id', deleteTask); // delete one task
+
+// app.get('/api/v1/task', getAllTask);         // get All tasks
+// app.post('/api/v1/task/:id', createTask);   // create one task
+// app.get('/api/v1/task/:id', getTask);       // get one task
+// app.patch('/api/v1/task/:id', updateTask);  // update one task
+// app.delete('/api/v1/task/:id', deleteTask); // delete one task
 
 // app.listen(port, () => {
 //   console.log(`"Task Manager App running on port ${port}!"`);

@@ -4,16 +4,17 @@ const mongoose = require("mongoose");
 const connectDB = (url) => {
   return mongoose
     .connect(url, {
-      // useNewUrlParser: true,
-      // useCreateIndex: true,
-      // useUnifiedTopology: true,
-      // useFindAndModify: false,
+      readPreference: "primary",
+      authMechanism: "SCRAM",
+      readPreferenceTags: { dc: "ny", rack: "r1" },
+      retryWrites: true,
+      retryReads: true,
     })
     .then(() => {
-      console.log("Connected to Mongo!");
+      console.log("Connected to the Database!");
     })
     .catch((err) => {
-      console.error("Error connecting to Mongo", err);
+      console.error("Error connecting to the Database", err);
     });
 };
 

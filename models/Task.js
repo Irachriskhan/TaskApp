@@ -1,20 +1,6 @@
-// import mongoose from "mongoose";
-// const { Schema } = mongoose;
-
-// const blogSchema = new Schema({
-//   title: String, // String is shorthand for {type: String}
-//   author: String,
-//   body: String,
-//   comments: [{ body: String, date: Date }],
-//   date: { type: Date, default: Date.now },
-//   hidden: Boolean,
-//   meta: {
-//     votes: Number,
-//     favs: Number,
-//   },
-// });
-
 const mongoose = require("mongoose");
+
+// A schema is a representation of collection tasks
 const TaskSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -23,8 +9,7 @@ const TaskSchema = new mongoose.Schema({
     maxlength: [30, "name can't go beyond 30"],
   },
   completed: Boolean,
-  phoneNumber: Number,
-  adress: String,
 });
 
-module.exports = mongoose.model("Task", TaskSchema);
+module.exports = mongoose.model("tasks", TaskSchema);
+// specify the collection of DB
