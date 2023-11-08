@@ -8,7 +8,10 @@ const TaskSchema = new mongoose.Schema({
     trim: true,
     maxlength: [30, "name can't go beyond 30"],
   },
-  completed: Boolean,
+  completed: {
+    type: Boolean,
+    default: false, // remove it if you want to use PUT method
+  },
 });
 
 module.exports = mongoose.model("tasks", TaskSchema);
