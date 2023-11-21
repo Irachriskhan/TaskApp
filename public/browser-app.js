@@ -9,16 +9,16 @@ const showTasks = async () => {
   loadingDOM.style.visibility = "visible";
   try {
     const {
-      data: { task },
+      data: { tasks },
     } = await axios.get("/api/v1/task");
 
-    if (task.length < 1) {
+    if (tasks.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>';
       loadingDOM.style.visibility = "hidden";
       return;
     }
 
-    const allTasks = task
+    const allTasks = tasks
       .map((task) => {
         const { completed, _id: taskID, name } = task;
         return `<div class="single-task ${completed && "task-completed"}">
