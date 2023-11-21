@@ -3,6 +3,7 @@ const loadingDOM = document.querySelector(".loading-text");
 const formDOM = document.querySelector(".task-form");
 const taskInputDOM = document.querySelector(".task-input");
 const formAlertDOM = document.querySelector(".form-alert");
+
 // Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = "visible";
@@ -10,6 +11,7 @@ const showTasks = async () => {
     const {
       data: { task },
     } = await axios.get("/api/v1/task");
+
     if (task.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>';
       loadingDOM.style.visibility = "hidden";

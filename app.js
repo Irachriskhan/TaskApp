@@ -38,3 +38,9 @@ start();
 // app.listen(port, () => {
 //   console.log(`"Task Manager App running on port ${port}!"`);
 // });
+
+//public/postman => app(umutima) => route => controller => model
+//                  app =>  db => atlas/database
+
+// localhost:port = app.js
+// 127.0.0.1:port = app.js
